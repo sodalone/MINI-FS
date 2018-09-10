@@ -27,14 +27,14 @@
     <ClCompile Include="FCB.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="File.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Folder.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
