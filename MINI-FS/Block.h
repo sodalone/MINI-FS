@@ -3,7 +3,7 @@
 class Block :public FCB//数据块
 {
 	int nextblock;//指向下一个数据块
-	char data[4092];//记录数据
+	char data[4084];//记录数据
 
 	Block();
 	~Block();
