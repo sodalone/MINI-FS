@@ -13,8 +13,7 @@ class FAT
 {
 public:
 	priority_queue <int>freeblock;//改为使用队列维护，用以恢复删除文件
-	unsigned char recmap[32769];//用来存储垃圾回收位图
-								//使用unsigned以免向右位移负数补1造成影响
+	char recmap[32769];//用来存储垃圾回收位图
 	void init();
 	void inittot();
 	int getBlock();

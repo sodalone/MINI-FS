@@ -8,7 +8,7 @@ public:
 	~DiskMannger();//析构函数
 
 	void create();//创建1G的Windows空间
-	void mount();//进入已创建空间  
+	void mount();//进入已创建空间
 	void fmt(FILE *fp);//初始化当前空间
 
 	void make(); //创建文件
