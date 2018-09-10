@@ -1,6 +1,6 @@
 #include "FCB.h"
 
-FCB::FCB(){
+FCB::FCB() {
 
 }
 
@@ -8,6 +8,6 @@ FCB::~FCB()
 {
 }
 
-string FCB::getTime(){
+string FCB::getTime() {
 	return string();
 }

@@ -1,11 +1,12 @@
 #pragma once
 #include <cstdio>
+#include"FCB.h"
 using namespace std;
 class DiskMannger {
 public:
 	DiskMannger(); //构造函数
 	~DiskMannger();//析构函数
-	
+
 	void create();//创建1G的Windows空间
 	void mount();//进入已创建空间
 	void fmt(FILE *fp);//初始化当前空间
@@ -27,4 +28,5 @@ public:
 	void recover(); //恢复一个删除文件
 	void clear(); //清空回收站
 	void rm(); //删除文件
+	void search(int, FCB*);
 };

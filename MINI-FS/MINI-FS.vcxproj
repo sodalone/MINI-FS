@@ -123,7 +123,7 @@
     <ClCompile Include="FAT.cpp" />
     <ClCompile Include="FCB.cpp" />
     <ClCompile Include="File.cpp" />
-    <ClCompile Include="Floder.cpp" />
+    <ClCompile Include="Folder.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +132,7 @@
     <ClInclude Include="FAT.h" />
     <ClInclude Include="FCB.h" />
     <ClInclude Include="File.h" />
-    <ClInclude Include="Floder.h" />
+    <ClInclude Include="Folder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

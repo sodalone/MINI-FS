@@ -4,14 +4,14 @@ Block::Block() {
 
 }
 
-Block::~Block(){
+Block::~Block() {
 
 }
 
-void Block::clear(){
+void Block::clear() {
 
 }
 
-void Block::write(){
+void Block::write() {
 
 }
