@@ -3,23 +3,25 @@
 #include<vector>
 
 
-class Folder :public FCB //ÎÄ¼ş¼Ğ
+class Folder :public FCB //æ–‡ä»¶å¤¹
 {
 public:
-	char name[9];//ÎÄ¼şÃû£º    ÎÄ¼şÃû
-	char create_time[20];//´´½¨Ê±¼ä
-	char last_time[20];//×îºóĞŞ¸ÄÊ±¼ä
-	int size;//ÎÄ¼ş´óĞ¡£ºÒÔ×Ö½Ú»ò¿éÎªµ¥Î»µÄÎÄ¼ş³¤¶È¡£
-	int access;//ÎÄ¼şµÄ±£»¤·½Ê½:1Ö»¶Á 2¿ÉĞ´ 3¿ÉÖ´ĞĞ
-	int father;//Ö¸Ïò¸¸ÎÄ¼şË÷Òı¿é
+	char name[9];//æ–‡ä»¶åï¼š    æ–‡ä»¶å
+	char create_time[20];//åˆ›å»ºæ—¶é—´
+	char last_time[20];//æœ€åä¿®æ”¹æ—¶é—´
+	int size;//æ–‡ä»¶å¤§å°ï¼šä»¥å­—èŠ‚æˆ–å—ä¸ºå•ä½çš„æ–‡ä»¶é•¿åº¦ã€‚
+	int access;//æ–‡ä»¶çš„ä¿æŠ¤æ–¹å¼:1åªè¯» 2å¯å†™ 3å¯æ‰§è¡Œ
+	int father;//æŒ‡å‘çˆ¶æ–‡ä»¶ç´¢å¼•å—
 	int childsize;
-	vector <int >child;//×ÓÎÄ¼şË÷Òı±í?????????¶àÉÙ¸ö
+	vector <int >child;//å­æ–‡ä»¶ç´¢å¼•è¡¨?????????å¤šå°‘ä¸ª
 
 	Folder();
 	~Folder();
 
 	void addChild(FCB* file);
-	bool count(FCB *file);//ÅĞ¶ÏÄ¿±êÎÄ¼şÊÇ·ñ´æÔÚ
-	int find(FCB *file);//ÕÒµ½Ä¿±êÎÄ¼ş²¢·µ»ØÎÄ¼şË÷Òı¿éµÄ¿éºÅ
-	bool delete_folder(FCB* file);//É¾³ıÎÄ¼ş¼Ğ 
+	bool count(FCB *file);//åˆ¤æ–­ç›®æ ‡æ–‡ä»¶æ˜¯å¦å­˜åœ¨
+	int find(FCB *file);//æ‰¾åˆ°ç›®æ ‡æ–‡ä»¶å¹¶è¿”å›æ–‡ä»¶ç´¢å¼•å—çš„å—å·
+	bool delete_folder(FCB* file);//åˆ é™¤æ–‡ä»¶å¤¹ 
+	FCB * fa_node; 
+	vector <FCB*> child_node;
 };
