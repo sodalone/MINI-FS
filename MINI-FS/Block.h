@@ -1,6 +1,5 @@
 #pragma once
 #include "FCB.h"
-//xfsdf
 
 class Block :public FCB//数据块
 {
