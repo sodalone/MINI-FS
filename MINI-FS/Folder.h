@@ -15,7 +15,7 @@ public:
 	int childsize;
 	vector <int >child;//子文件索引表?????????多少个
 
-	Folder(string _name, int  file_access);
+	Folder();
 	~Folder();
 
 	void addChild(FCB* file);

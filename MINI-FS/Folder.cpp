@@ -1,6 +1,6 @@
 #include "Folder.h"
 
-Folder::Folder(string _name, int  file_access)
+Folder::Folder()
 {
 }
 
