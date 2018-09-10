@@ -4,29 +4,29 @@
 using namespace std;
 class DiskMannger {
 public:
-	DiskMannger(); //¹¹Ôìº¯Êı
-	~DiskMannger();//Îö¹¹º¯Êı
+	DiskMannger(); //æ„é€ å‡½æ•°
+	~DiskMannger();//ææ„å‡½æ•°
 
-	void create();//´´½¨1GµÄWindows¿Õ¼ä
-	void mount();//½øÈëÒÑ´´½¨¿Õ¼ä
-	void fmt(FILE *fp);//³õÊ¼»¯µ±Ç°¿Õ¼ä
+	void create();//åˆ›å»º1Gçš„Windowsç©ºé—´
+	void mount();//è¿›å…¥å·²åˆ›å»ºç©ºé—´
+	void fmt(FILE *fp);//åˆå§‹åŒ–å½“å‰ç©ºé—´
 
-	void make(); //´´½¨ÎÄ¼ş
-	void open(); //´ò¿ªÎÄ¼ş
-	void exit(); //ÍË³öµ±Ç°´ò¿ªÎÄ¼ş
-	void write(); //ÎÄ¼şµÄĞ´Èë£»
-	void read(); //ÎÄ¼şµÄ¶ÁÈë£»
-	void cp(); //ÎÄ¼ş»òÄ¿Â¼µÄ¸´ÖÆ
-	void rename(); //ÎÄ¼şÖØÃüÃû
-	void dr(); //ÁĞ³öÎÄ¼şÄ¿Â¼»òÕßÆäÏêÏ¸ĞÅÏ¢
-	void tp(int curBlockNum); //ÏÔÊ¾¿Õ¼äÖĞµÄÎÄ±¾ÎÄ¼ş£¬Ö»ÏÔÊ¾ÎÄ¼ş
-	void dl(); //É¾³ıÎÄ¼ş»òÕßÎÄ¼ş¼Ğ
-	void cd(); //½øÈëÎÄ¼ş¼Ğ
-	void att(); //ÏÔÊ¾ÎÄ¼şÊôĞÔ
-	void more(); //·ÖÒ³ÏÔÊ¾
-	void back(); //½øÈëÉÏ¼¶Ä¿Â¼
-	void recover(); //»Ö¸´Ò»¸öÉ¾³ıÎÄ¼ş
-	void clear(); //Çå¿Õ»ØÊÕÕ¾
-	void rm(); //É¾³ıÎÄ¼ş
-	void search(int, FCB*);
+	void make(); //åˆ›å»ºæ–‡ä»¶
+	void open(); //æ‰“å¼€æ–‡ä»¶
+	void exit(); //é€€å‡ºå½“å‰æ‰“å¼€æ–‡ä»¶
+	void write(); //æ–‡ä»¶çš„å†™å…¥ï¼›
+	void read(); //æ–‡ä»¶çš„è¯»å…¥ï¼›
+	void cp(); //æ–‡ä»¶æˆ–ç›®å½•çš„å¤åˆ¶
+	void rename(); //æ–‡ä»¶é‡å‘½å
+	void dr(); //åˆ—å‡ºæ–‡ä»¶ç›®å½•æˆ–è€…å…¶è¯¦ç»†ä¿¡æ¯
+	void tp(int curBlockNum); //æ˜¾ç¤ºç©ºé—´ä¸­çš„æ–‡æœ¬æ–‡ä»¶ï¼Œåªæ˜¾ç¤ºæ–‡ä»¶
+	void dl(); //åˆ é™¤æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹
+	void cd(); //è¿›å…¥æ–‡ä»¶å¤¹
+	void att(); //æ˜¾ç¤ºæ–‡ä»¶å±æ€§
+	void more(); //åˆ†é¡µæ˜¾ç¤º
+	void back(); //è¿›å…¥ä¸Šçº§ç›®å½•
+	void recover(); //æ¢å¤ä¸€ä¸ªåˆ é™¤æ–‡ä»¶
+	void clear(); //æ¸…ç©ºå›æ”¶ç«™
+	void rm(); //åˆ é™¤æ–‡ä»¶
+	void search (int, FCB*,FCB *);//å»ºç«‹ä¸€ä¸ªæ–‡ä»¶ç´¢å¼•æ ‘
 };
