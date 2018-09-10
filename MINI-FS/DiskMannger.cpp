@@ -25,9 +25,9 @@ FCB * now_pos;//指向当前内存的位置
 
 DiskMannger::DiskMannger() {
 	cout << "欢迎！！-----------您可输入help获得帮助------------" << endl;
-	string cmd;
-	while (cin >> cmd) {
-		if (cmd == "help") {
+	string cmd1;
+	while (cin >> cmd1) {
+		if (cmd1 == "help") {
 			cout << "帮助文档" << endl;
 			cout << "\n●fmt:\n" <<
 				"●close:\n" <<
@@ -50,72 +50,78 @@ DiskMannger::DiskMannger() {
 				"●* :\n" <<
 				"●? :\n" << endl;
 		}
-		else if (cmd == "create") {
+		else if (cmd1 == "create") {
 			this->create();
 		}
-		else if (cmd == "mount") {
+		else if (cmd1 == "mount") {
 			this->mount();
-		}
-		else if (cmd == "fmt") {
-			this->fmt(root_fp);/////////////这里该传个啥？？启动块指针即root_fp呀？？
-		}
-		else if (cmd == "close") {
-			cout << "退出当前空间" << endl;
-			break;
-		}
-		else if (cmd == "make") {
-			this->make();
-		}
-		else if (cmd == "open") {
-			this->open();
-		}
-		else if (cmd == "exit") {
-			this->exit();
-		}
-		else if (cmd == "write") {
-			this->write();
-		}
-		else if (cmd == "read") {
-			this->read();
-		}
-		else if (cmd == "exit") {
-			this->exit();
-		}
-		else if (cmd == "cp") {
-			this->cp();
-		}
-		else if (cmd == "rename") {
-			this->rename();
-		}
-		else if (cmd == "dr") {
-			this->dr();
-		}
-		else if (cmd == "tp") {
-			this->tp(5);
-		}
-		else if (cmd == "dl") {
-			this->dl();
-		}
-		else if (cmd == "cd") {
-			this->cd();
-		}
-		else if (cmd == "att") {
-			this->att();
-		}
-		else if (cmd == "more") {
-			this->more();
-		}
-		else if (cmd == "back") {
-			this->back();
-		}
-		else if (cmd == "recover") {
-			this->recover();
-		}
-		else if (cmd == "clear") {
-			this->clear();
-		}
-		else if (cmd == "rm") {
-			this->rm();
+			string cmd;
+			while (cin >> cmd) {
+				if (cmd == "fmt") {
+					this->fmt(root_fp);/////////////这里该传个啥？？启动块指针即root_fp呀？？
+				}
+				else if (cmd == "close") {
+					cout << "退出当前空间" << endl;
+					break;
+				}
+				else if (cmd == "make") {
+					this->make();
+				}
+				else if (cmd == "open") {
+					this->open();
+				}
+				else if (cmd == "exit") {
+					this->exit();
+				}
+				else if (cmd == "write") {
+					this->write();
+				}
+				else if (cmd == "read") {
+					this->read();
+				}
+				else if (cmd == "exit") {
+					this->exit();
+				}
+				else if (cmd == "cp") {
+					this->cp();
+				}
+				else if (cmd == "rename") {
+					this->rename();
+				}
+				else if (cmd == "dr") {
+					this->dr();
+				}
+				else if (cmd == "tp") {
+					this->tp(5);
+				}
+				else if (cmd == "dl") {
+					this->dl();
+				}
+				else if (cmd == "cd") {
+					this->cd();
+				}
+				else if (cmd == "att") {
+					this->att();
+				}
+				else if (cmd == "more") {
+					this->more();
+				}
+				else if (cmd == "back") {
+					this->back();
+				}
+				else if (cmd == "recover") {
+					this->recover();
+				}
+				else if (cmd == "clear") {
+					this->clear();
+				}
+				else if (cmd == "rm") {
+					this->rm();
+				}
+				else {
+					cout << "输入指令错误，请重新输入！！" << endl;
+				}
+			}
 		}
 		else {
 			cout << "输入指令错误，请重新输入！！" << endl;
