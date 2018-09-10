@@ -19,37 +19,37 @@ using namespace std;
 const static int ALL_DATA_BLOCK_NUM = 262127;
 FAT fat = FAT();
 FILE * root_fp;
-FCB * root_folder;//Ö¸ÏòÄÚ´æÖĞ¸ùÄ¿Â¼µØÖ·
-FCB * now_pos;//Ö¸Ïòµ±Ç°ÄÚ´æµÄÎ»ÖÃ
+FCB * root_folder;//æŒ‡å‘å†…å­˜ä¸­æ ¹ç›®å½•åœ°å€
+FCB * now_pos;//æŒ‡å‘å½“å‰å†…å­˜çš„ä½ç½®
 
 
 DiskMannger::DiskMannger() {
-	cout << "»¶Ó­£¡£¡-----------Äú¿ÉÊäÈëhelp»ñµÃ°ïÖú------------" << endl;
+	cout << "æ¬¢è¿ï¼ï¼-----------æ‚¨å¯è¾“å…¥helpè·å¾—å¸®åŠ©------------" << endl;
 	string cmd1;
 	while (cin >> cmd1) {
 		if (cmd1 == "help") {
-			cout << "°ïÖúÎÄµµ" << endl;
-			cout << "\n¡ñfmt:\n" <<
-				"¡ñbreak:\n" <<
-				"¡ñclose:\n" <<
-				"¡ñmake:\n" <<
-				"¡ñopen : \n" <<
-				"¡ñexit : \n" <<
-				"¡ñwrite : \n" <<
-				"¡ñread : \n" <<
-				"¡ñcp : \n" <<
-				"¡ñdr : \n" <<
-				"¡ñdl : \n" <<
-				"¡ñtp : \n" <<
-				"¡ñmore : \n" <<
-				"¡ñatt : \n" <<
-				"¡ñback :\n" <<
-				"¡ñrename:\n" <<
-				"¡ñrecover:\n" <<
-				"¡ñclear:\n" <<
-				"¡ñrm:\n" <<
-				"¡ñ* :\n" <<
-				"¡ñ? :\n" << endl;
+			cout << "å¸®åŠ©æ–‡æ¡£" << endl;
+			cout << "\nâ—fmt:\n" <<
+				"â—break:\n" <<
+				"â—close:\n" <<
+				"â—make:\n" <<
+				"â—open : \n" <<
+				"â—exit : \n" <<
+				"â—write : \n" <<
+				"â—read : \n" <<
+				"â—cp : \n" <<
+				"â—dr : \n" <<
+				"â—dl : \n" <<
+				"â—tp : \n" <<
+				"â—more : \n" <<
+				"â—att : \n" <<
+				"â—back :\n" <<
+				"â—rename:\n" <<
+				"â—recover:\n" <<
+				"â—clear:\n" <<
+				"â—rm:\n" <<
+				"â—* :\n" <<
+				"â—? :\n" << endl;
 		}
 		else if (cmd1 == "create") {
 			this->create();
@@ -59,33 +59,33 @@ DiskMannger::DiskMannger() {
 			string cmd;
 			while (cin >> cmd) {
 				if (cmd == "help") {
-					cout << "°ïÖúÎÄµµ" << endl;
-					cout << "\n¡ñfmt:\n" <<
-						"¡ñclose:\n" <<
-						"¡ñmake:\n" <<
-						"¡ñopen : \n" <<
-						"¡ñexit : \n" <<
-						"¡ñwrite : \n" <<
-						"¡ñread : \n" <<
-						"¡ñcp : \n" <<
-						"¡ñdr : \n" <<
-						"¡ñdl : \n" <<
-						"¡ñtp : \n" <<
-						"¡ñmore : \n" <<
-						"¡ñatt : \n" <<
-						"¡ñback :\n" <<
-						"¡ñrename:\n" <<
-						"¡ñrecover:\n" <<
-						"¡ñclear:\n" <<
-						"¡ñrm:\n" <<
-						"¡ñ* :\n" <<
-						"¡ñ? :\n" << endl;
+					cout << "å¸®åŠ©æ–‡æ¡£" << endl;
+					cout << "\nâ—fmt:\n" <<
+						"â—close:\n" <<
+						"â—make:\n" <<
+						"â—open : \n" <<
+						"â—exit : \n" <<
+						"â—write : \n" <<
+						"â—read : \n" <<
+						"â—cp : \n" <<
+						"â—dr : \n" <<
+						"â—dl : \n" <<
+						"â—tp : \n" <<
+						"â—more : \n" <<
+						"â—att : \n" <<
+						"â—back :\n" <<
+						"â—rename:\n" <<
+						"â—recover:\n" <<
+						"â—clear:\n" <<
+						"â—rm:\n" <<
+						"â—* :\n" <<
+						"â—? :\n" << endl;
 				}
 				else if (cmd == "fmt") {
-					this->fmt(root_fp);/////////////ÕâÀï¸Ã´«¸öÉ¶£¿£¿Æô¶¯¿éÖ¸Õë¼´root_fpÑ½£¿£¿
+					this->fmt(root_fp);/////////////è¿™é‡Œè¯¥ä¼ ä¸ªå•¥ï¼Ÿï¼Ÿå¯åŠ¨å—æŒ‡é’ˆå³root_fpå‘€ï¼Ÿï¼Ÿ
 				}
 				else if (cmd == "close") {
-					cout << "ÍË³öµ±Ç°¿Õ¼ä" << endl;
+					cout << "é€€å‡ºå½“å‰ç©ºé—´" << endl;
 					break;
 				}
 				else if (cmd == "make") {
@@ -143,16 +143,16 @@ DiskMannger::DiskMannger() {
 					this->rm();
 				}
 				else {
-					cout << "ÊäÈëÖ¸Áî´íÎó£¬ÇëÖØĞÂÊäÈë£¡£¡" << endl;
+					cout << "è¾“å…¥æŒ‡ä»¤é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼ï¼" << endl;
 				}
 			}
 		}
 		else if(cmd1 == "break"){
-			cout << "ÍË³öÏµÍ³" << endl;
+			cout << "é€€å‡ºç³»ç»Ÿ" << endl;
 			break;
 		}
 		else {
-			cout << "ÊäÈëÖ¸Áî´íÎó£¬ÇëÖØĞÂÊäÈë£¡£¡" << endl;
+			cout << "è¾“å…¥æŒ‡ä»¤é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼ï¼" << endl;
 		}
 	}
 }
@@ -163,34 +163,34 @@ void DiskMannger::create() {
 	memset(SName, 0, sizeof(SName));
 	cin >> SName;
 	SName[8] = '\0';
-	cout << "´´½¨" << SName << "¿Õ¼ä" << endl;
+	cout << "åˆ›å»º" << SName << "ç©ºé—´" << endl;
 	char magic[8] = { 'm','i','n','i','f','s','s','s' };
 	if (_access(SName, 0) == 0)
 	{
-		//ÒÑ¾­´æÔÚÕâ¸öÎÄ¼şÏµÍ³
-		FILE* fp = fopen(SName, "r"); //¶ÁÈ¡Õâ¸öÎÄ¼şÏµÍ³
-		fseek(fp, 0, SEEK_SET);//»Øµ½ÁË¿ªÊ¼µÄÎ»ÖÃ
+		//å·²ç»å­˜åœ¨è¿™ä¸ªæ–‡ä»¶ç³»ç»Ÿ
+		FILE* fp = fopen(SName, "r"); //è¯»å–è¿™ä¸ªæ–‡ä»¶ç³»ç»Ÿ
+		fseek(fp, 0, SEEK_SET);//å›åˆ°äº†å¼€å§‹çš„ä½ç½®
 		char buf[8];
-		fread(buf, 1, 8, fp);//¶ÁÈ¡magic numberÆ¥ÅäÏµÍ³
+		fread(buf, 1, 8, fp);//è¯»å–magic numberåŒ¹é…ç³»ç»Ÿ
 		bool flag = true;
 		for (int i = 0; i < 8 && flag; i++)
 			if (magic[i] != buf[i]) flag = false;
-		if (1)//Èç¹ûÆ¥Åä
+		if (1)//å¦‚æœåŒ¹é…
 		{
-			printf("´ËÎÄ¼şÏµÍ³ÒÑ¾­±»½¨Á¢£¡ÇëÖØĞÂÊäÈë¡­¡­\n");
+			printf("æ­¤æ–‡ä»¶ç³»ç»Ÿå·²ç»è¢«å»ºç«‹ï¼è¯·é‡æ–°è¾“å…¥â€¦â€¦\n");
 			return;
 		}
 	}
-	FILE *fp = fopen(SName, "w+"); //¶ÁÈ¡Õâ¸öÎÄ¼şÏµÍ³
-	fseek(fp, 0, SEEK_SET);//»Øµ½ÁË¿ªÊ¼µÄÎ»ÖÃ
-	printf("³õ´Î½¨Á¢ÎÄ¼şÏµÍ³£¬ÇëÉÔµÈ\n");
+	FILE *fp = fopen(SName, "w+"); //è¯»å–è¿™ä¸ªæ–‡ä»¶ç³»ç»Ÿ
+	fseek(fp, 0, SEEK_SET);//å›åˆ°äº†å¼€å§‹çš„ä½ç½®
+	printf("åˆæ¬¡å»ºç«‹æ–‡ä»¶ç³»ç»Ÿï¼Œè¯·ç¨ç­‰\n");
 
 	int num = 8;
 	int usenum = 262126;
 	int binnum = 0;
-	fseek(fp, 32768 * 32768 - 1, SEEK_SET); // ½«ÎÄ¼şµÄÖ¸Õë ÒÆÖÁ Ö¸¶¨´óĞ¡µÄÎ»ÖÃ 32768*32768
-	fputc('a', fp); // ÔÚÒªÖ¸¶¨´óĞ¡ÎÄ¼şµÄÄ©Î²Ëæ±ã·ÅÒ»¸öÊı¾İ
-	fseek(fp, 0, SEEK_SET);//»Øµ½ÁË¿ªÊ¼µÄÎ»ÖÃ
+	fseek(fp, 32768 * 32768 - 1, SEEK_SET); // å°†æ–‡ä»¶çš„æŒ‡é’ˆ ç§»è‡³ æŒ‡å®šå¤§å°çš„ä½ç½® 32768*32768
+	fputc('a', fp); // åœ¨è¦æŒ‡å®šå¤§å°æ–‡ä»¶çš„æœ«å°¾éšä¾¿æ”¾ä¸€ä¸ªæ•°æ®
+	fseek(fp, 0, SEEK_SET);//å›åˆ°äº†å¼€å§‹çš„ä½ç½®
 	fwrite(magic, sizeof(char), 8, fp);
 	fwrite(&BLOCK_SIZE, sizeof(int), 1, fp);
 	fwrite(&num, sizeof(int), 1, fp);
@@ -200,10 +200,10 @@ void DiskMannger::create() {
 	num = 0;
 	char t = 0;
 	fseek(fp, 0, SEEK_SET);
-	fseek(fp, 1024 * 4, SEEK_CUR);//Ìø¹ıÆô¶¯¿é
+	fseek(fp, 1024 * 4, SEEK_CUR);//è·³è¿‡å¯åŠ¨å—
 	for (int i = 0; i < 65536; i++)
-		fwrite(&t, sizeof(char), 1, fp);//freebitmap & recbitmap¼´µÚ2~17¿éÖÃÁã
-		//´´½¨Ò»¸ö¸ùÄ¿Â¼ ÔÚ18¿é¼ÇÂ¼¸ùÄ¿Â¼ĞÅÏ¢
+		fwrite(&t, sizeof(char), 1, fp);//freebitmap & recbitmapå³ç¬¬2~17å—ç½®é›¶
+		//åˆ›å»ºä¸€ä¸ªæ ¹ç›®å½• åœ¨18å—è®°å½•æ ¹ç›®å½•ä¿¡æ¯
 	fseek(fp, 0, SEEK_SET);
 	fseek(fp, 1024 * 4 * 17, SEEK_CUR);
 
@@ -212,7 +212,7 @@ void DiskMannger::create() {
 	int size = 0;
 	int access = 3;
 	int father = 0;
-	//»ñÈ¡Ê±¼ä
+	//è·å–æ—¶é—´
 	time_t timep;
 	struct tm *p;
 	time(&timep);
@@ -227,7 +227,7 @@ void DiskMannger::create() {
 	last_time[5] = create_time[5] = p->tm_sec;
 
 	int childsize = 0;
-	int tmp = 0;//Õ¼Î»
+	int tmp = 0;//å ä½
 	fwrite(&nodeId, sizeof(int), 1, fp);
 	fwrite(&Ftype, sizeof(int), 1, fp);
 	fwrite(&size, sizeof(int), 1, fp);
@@ -247,7 +247,8 @@ void DiskMannger::create() {
 
 
 
-void DiskMannger::search(int cur_num, FCB * node_now)
+
+void DiskMannger::search(int cur_num, FCB * node_now,FCB * fa)
 {
 	cur_num = cur_num - 1;
 	fseek(root_fp, 0, SEEK_SET);
@@ -255,81 +256,80 @@ void DiskMannger::search(int cur_num, FCB * node_now)
 	fseek(root_fp, sizeof(int), SEEK_CUR);
 	int cur_type;
 	fread(&cur_type, sizeof(int), 1, root_fp);
-	if (cur_type == 1)//ÎÄ¼ş
+	if (cur_type == 1)//æ–‡ä»¶
 	{
-		File file_now = File();//µ±Ç°ÎÄ¼ş½áµã
-		file_now.Ftype = 1;
-		fread(&file_now.size, sizeof(int), 1, root_fp);
-		fread(&file_now.access, sizeof(int), 1, root_fp);
-		fread(&file_now.father, sizeof(int), 1, root_fp);
-		fread(&file_now.name, sizeof(char), 9, root_fp);
-		fread(&file_now.create_time, sizeof(short), 6, root_fp);
-		fread(&file_now.last_time, sizeof(short), 6, root_fp);
-		//???ËûµÄ¸¸Ç×rºÃÄ¿Ç°²»Ö§³Ö·µ»ØÉÏÒ»²ã¡£¡£¡£
-		file_now.fa_node = node_now;
+		File * file_now= (File*)node_now;//å½“å‰æ–‡ä»¶ç»“ç‚¹å¼ºè¡Œè½¬åŒ–
+		file_now->Ftype = 1;
+		fread(& file_now->size, sizeof(int), 1, root_fp);
+		fread(& file_now->access, sizeof(int), 1, root_fp);
+		fread(& file_now->father, sizeof(int), 1, root_fp);
+		fread(& file_now->name, sizeof(char), 9, root_fp);
+		fread(& file_now->create_time, sizeof(short), 6, root_fp);
+		fread(& file_now->last_time, sizeof(short), 6, root_fp);
+		//???ä»–çš„çˆ¶äº²rå¥½ç›®å‰ä¸æ”¯æŒè¿”å›ä¸Šä¸€å±‚ã€‚ã€‚ã€‚
+		file_now->fa_node =fa;
 	}
 	else {
-		//ÎÄ¼ş¼Ğ
-		Folder folder_now = Folder();//µ±Ç°ÎÄ¼ş½áµã
-		folder_now.Ftype = 2;
-		fread(&folder_now, sizeof(int), 1, root_fp);
-		fread(&folder_now.access, sizeof(int), 1, root_fp);
-		fread(&folder_now.father, sizeof(int), 1, root_fp);
-		fread(&folder_now.name, sizeof(char), 9, root_fp);
-		fread(&folder_now.create_time, sizeof(short), 6, root_fp);
-		fread(&folder_now.last_time, sizeof(short), 6, root_fp);
-		fread(&folder_now.childsize, sizeof(int), 1, root_fp);
-		for (int i = 1; i <= folder_now.childsize; i++)
+		//æ–‡ä»¶å¤¹
+		Folder * folder_now =(Folder*) node_now;//å½“å‰æ–‡ä»¶å¤¹ç»“ç‚¹å¼ºè¡Œè½¬åŒ–
+		folder_now->Ftype = 2;
+		fread(&folder_now->size, sizeof(int), 1, root_fp);
+		fread(&folder_now->access, sizeof(int), 1, root_fp);
+		fread(&folder_now->father, sizeof(int), 1, root_fp);
+		fread(&folder_now->name, sizeof(char), 9, root_fp);
+		fread(&folder_now->create_time, sizeof(short), 6, root_fp);
+		fread(&folder_now->last_time, sizeof(short), 6, root_fp);
+		fread(&folder_now->childsize, sizeof(int), 1, root_fp);
+		for (int i = 1; i <= folder_now->childsize; i++)
 		{
 			int tmp;
 			fread(&tmp, sizeof(int), 1, root_fp);
-			folder_now.child.push_back(tmp);
-			this->search(tmp, &folder_now);//¼ÌĞø²éÕÒ¶ù×ÓµÄË÷ÒıÎÄ¼ş
+			folder_now->child.push_back(tmp);
+			FCB fchild = FCB();
+			folder_now->child_node.push_back(&fchild);
+			this->search(tmp, &fchild,folder_now);//ç»§ç»­æŸ¥æ‰¾å„¿å­çš„ç´¢å¼•æ–‡ä»¶
+			
 		}
-		//folder_now.fa_node = node_now;
-		if (cur_num == 18)//Èç¹ûÊÇµÚÒ»¿é
-		{
-			root_folder = &folder_now;//È«¾ÖÖ¸Ïòµ±Ç°
-		}
+		folder_now->fa_node = fa;
 	}
-
 	return;
 }
 
 
+
 void DiskMannger::mount()
-{//¹ÒÔØµ½ÒÑ¾­ÓĞµÄÎÄ¼şÏµÍ³
+{//æŒ‚è½½åˆ°å·²ç»æœ‰çš„æ–‡ä»¶ç³»ç»Ÿ
 	char SName[9];
 	memset(SName, 0, sizeof(SName));
 	cin >> SName;
 	SName[8] = '\0';
 	char magic[8] = { 'm','i','n','i','f','s','s','s' };
-	if (_access(SName, 0) == 0)//ÒÑ¾­´æÔÚ¸ÃÏµÍ³
+	if (_access(SName, 0) == 0)//å·²ç»å­˜åœ¨è¯¥ç³»ç»Ÿ
 	{
 		FILE *fp = fopen(SName, "r");
 		root_fp = fp;
-		fseek(fp, 0, SEEK_SET);//»Øµ½ÁË¿ªÊ¼µÄÎ»ÖÃ
+		fseek(fp, 0, SEEK_SET);//å›åˆ°äº†å¼€å§‹çš„ä½ç½®
 		char buf[8];
-		fread(buf, 1, 8, fp);//¶ÁÈ¡magic numberÆ¥ÅäÏµÍ³
+		fread(buf, 1, 8, fp);//è¯»å–magic numberåŒ¹é…ç³»ç»Ÿ
 		bool flag = true;
 		for (int i = 0; i < 8 && flag; i++)
 			if (magic[i] != buf[i]) flag = false;
-		if (flag)//Èç¹ûÆ¥Åä ÔØÈëÖ®Ç°¼ÇÂ¼µÄ¿ÉÓÃ¿é¡¢¿É»ØÊÕ¿éµÄ¿éºÅĞÅÏ¢
+		if (flag)//å¦‚æœåŒ¹é… è½½å…¥ä¹‹å‰è®°å½•çš„å¯ç”¨å—ã€å¯å›æ”¶å—çš„å—å·ä¿¡æ¯
 		{
-			int count_free, count_rec;//¶Ô¿ÉÓÃ¿é¡¢¿É»ØÊÕ¿é¼ÆÊı
+			int count_free, count_rec;//å¯¹å¯ç”¨å—ã€å¯å›æ”¶å—è®¡æ•°
 			count_free = count_rec = 0;
 			fseek(fp, 0, SEEK_SET);
-			fseek(fp, 4096 + 2, SEEK_CUR);//Ö¸ÏòµÚÒ»¸öbitmap²¢´ÓµÚÈı×Ö½Ú¿ªÊ¼¼ÆËã
-										//1~18¿éÒÑ±»Õ¼ÓÃ
+			fseek(fp, 4096 + 2, SEEK_CUR);//æŒ‡å‘ç¬¬ä¸€ä¸ªbitmapå¹¶ä»ç¬¬ä¸‰å­—èŠ‚å¼€å§‹è®¡ç®—
+										//1~18å—å·²è¢«å ç”¨
 			char now;
 			fread(&now, sizeof(char), 1, fp);
-			for (int i = 0; i < 6; i++)//ÌØÅĞ19~24¿é
+			for (int i = 0; i < 6; i++)//ç‰¹åˆ¤19~24å—
 				if (now >> i == 0)
 				{
 					count_free++;
 					fat.freeblock.push(24 - i);
 				}
-			for (int i = 3; i < 32768; i++)//´Ó25ÅĞ¶Ï
+			for (int i = 3; i < 32768; i++)//ä»25åˆ¤æ–­
 			{
 				fread(&now, sizeof(char), 1, fp);
 				for (int j = 0; j < 8; j++)
@@ -339,13 +339,13 @@ void DiskMannger::mount()
 						fat.freeblock.push(i * 8 - j);
 					}
 			}
-			fseek(fp, 2, SEEK_CUR);//¿É»ØÊÕbitmap£¬´ÓµÚÈı×Ö½Ú¼ÆËã 1~18¿éÕ¼ÓÃ
+			fseek(fp, 2, SEEK_CUR);//å¯å›æ”¶bitmapï¼Œä»ç¬¬ä¸‰å­—èŠ‚è®¡ç®— 1~18å—å ç”¨
 			fread(&now, sizeof(char), 1, fp);
 			fat.recmap[2] = now;
-			for (int i = 0; i < 6; i++) //ÌØÅĞ19~24¿é
+			for (int i = 0; i < 6; i++) //ç‰¹åˆ¤19~24å—
 				if (((now >> i) & 1) == 1)
 					count_rec++;
-			for (int i = 3; i < 32768; i++)//´Ó25ÅĞ¶Ï
+			for (int i = 3; i < 32768; i++)//ä»25åˆ¤æ–­
 			{
 				fread(&now, sizeof(char), 1, fp);
 				fat.recmap[i] = now;
@@ -356,13 +356,13 @@ void DiskMannger::mount()
 			FCB * gen;
 			gen = new FCB();
 			root_folder = gen;
-			DiskMannger::search(18, gen);
+			DiskMannger::search(18, gen,gen);
 
 			/*	int type = gen->Ftype;
-				if (gen->Ftype == 1)//ÎÄ¼ş
+				if (gen->Ftype == 1)//æ–‡ä»¶
 				{
 					File * gen_file = (File*)gen;
-					///////////////Ìı·½¶«´óÀĞµÄ»°Ç¿ÖÆ×ª»»¾ÍºÃÀ±£¡£¡£¡£¡£¡
+					///////////////å¬æ–¹ä¸œå¤§ä½¬çš„è¯å¼ºåˆ¶è½¬æ¢å°±å¥½è¾£ï¼ï¼ï¼ï¼ï¼
 				}
 				else
 				{
@@ -372,8 +372,8 @@ void DiskMannger::mount()
 				}
 
 		*/
-			printf("µ±Ç°ÎÄ¼şÏµÍ³ÖĞ¹²ÓĞ%d¿Õ¿é¿ÉÓÃ,¹²%lld×Ö½Ú\n", count_free, (long long)count_free * 4 * 1024);
-			printf("µ±Ç°ÎÄ¼şÏµÍ³ÖĞ¹²ÓĞ%d¿É»ØÊÕ¿é¿ÉÓÃ,¹²%lld×Ö½Ú\n", count_rec, (long long)count_rec * 4 * 1024);
+			printf("å½“å‰æ–‡ä»¶ç³»ç»Ÿä¸­å…±æœ‰%dç©ºå—å¯ç”¨,å…±%lldå­—èŠ‚\n", count_free, (long long)count_free * 4 * 1024);
+			printf("å½“å‰æ–‡ä»¶ç³»ç»Ÿä¸­å…±æœ‰%då¯å›æ”¶å—å¯ç”¨,å…±%lldå­—èŠ‚\n", count_rec, (long long)count_rec * 4 * 1024);
 
 			root_fp = fopen(SName, "r+");
 
@@ -381,84 +381,84 @@ void DiskMannger::mount()
 		}
 		else
 		{
-			printf("¸ÃÏµÍ³²»´æÔÚÇÒ´æÔÚÍ¬ÃûÎÄ¼ş£¡\n");
-			printf("ÇëÊ¹ÓÃcreateÃüÁî´´½¨ÆäËûÃû³ÆµÄÎÄ¼şÏµÍ³£¡\n");
+			printf("è¯¥ç³»ç»Ÿä¸å­˜åœ¨ä¸”å­˜åœ¨åŒåæ–‡ä»¶ï¼\n");
+			printf("è¯·ä½¿ç”¨createå‘½ä»¤åˆ›å»ºå…¶ä»–åç§°çš„æ–‡ä»¶ç³»ç»Ÿï¼\n");
 			return;
 		}
 	}
 	else
 	{
-		printf("¸ÃÏµÍ³²»´æÔÚ£¡\n");
-		printf("ÇëÊ¹ÓÃcreateÃüÁîÏÈ½øĞĞ´´½¨£¡\n");
+		printf("è¯¥ç³»ç»Ÿä¸å­˜åœ¨ï¼\n");
+		printf("è¯·ä½¿ç”¨createå‘½ä»¤å…ˆè¿›è¡Œåˆ›å»ºï¼\n");
 		return;
 	}
 }
 
-void DiskMannger::fmt(FILE *fp) {////////////////fpÖ¸ÕëÖ¸ÏòÊ²Ã´£¿
+void DiskMannger::fmt(FILE *fp) {////////////////fpæŒ‡é’ˆæŒ‡å‘ä»€ä¹ˆï¼Ÿ
 	string flag;
 	cin >> flag;
 	if (flag == "-1") {
-		cout << "¼òµ¥³õÊ¼»¯£¬½öÉ¾³ıÄ¿Â¼ÎÄ¼ş£¬´ÅÅÌÊı¾İ²»½øĞĞÖØĞ´" << endl;
+		cout << "ç®€å•åˆå§‹åŒ–ï¼Œä»…åˆ é™¤ç›®å½•æ–‡ä»¶ï¼Œç£ç›˜æ•°æ®ä¸è¿›è¡Œé‡å†™" << endl;
 		char format = '\0';
-		fseek(fp, 22, SEEK_SET);///////Î»ÖÃ²é´íÁË£¿£¿£¿recmap£¿£¿£¿freebitmapÎ»ÖÃ²»¶Ô????
+		fseek(fp, 22, SEEK_SET);///////ä½ç½®æŸ¥é”™äº†ï¼Ÿï¼Ÿï¼Ÿrecmapï¼Ÿï¼Ÿï¼Ÿfreebitmapä½ç½®ä¸å¯¹????
 
-		fwrite(&ALL_DATA_BLOCK_NUM, sizeof(int), 1, fp);	//½«¿ÉÓÃ¿Õ¼äÖÃÎªÂú×´Ì¬£º262127 
-		fwrite(&format, sizeof(char), 17 * 4 * 1024 - 26, fp);//26ÎªÖ®Ç°Ö¸Õë¾­¹ıµÄ×Ö½ÚÊı £¬²¢½øĞĞfreebitmap£¬recbitmappµÄ¸ñÊ½»¯  
+		fwrite(&ALL_DATA_BLOCK_NUM, sizeof(int), 1, fp);	//å°†å¯ç”¨ç©ºé—´ç½®ä¸ºæ»¡çŠ¶æ€ï¼š262127 
+		fwrite(&format, sizeof(char), 17 * 4 * 1024 - 26, fp);//26ä¸ºä¹‹å‰æŒ‡é’ˆç»è¿‡çš„å­—èŠ‚æ•° ï¼Œå¹¶è¿›è¡Œfreebitmapï¼Œrecbitmappçš„æ ¼å¼åŒ–  
 
-		fwrite(&format, sizeof(char), 16, fp);	//¸ùÄ¿Â¼µÄ²¿·Ö¸ñÊ½»¯ 
+		fwrite(&format, sizeof(char), 16, fp);	//æ ¹ç›®å½•çš„éƒ¨åˆ†æ ¼å¼åŒ– 
 
-		fseek(fp, 49, SEEK_CUR);	//¸ùÄ¿Â¼µÄÎÄ¼ş¼ĞÃû³Æ£¬´´½¨Ê±¼ä²»×öĞŞ¸Ä£¬×îºóĞŞ¸ÄÊ±¼äÔİ²»¸ü¸Ä¡£ 
+		fseek(fp, 49, SEEK_CUR);	//æ ¹ç›®å½•çš„æ–‡ä»¶å¤¹åç§°ï¼Œåˆ›å»ºæ—¶é—´ä¸åšä¿®æ”¹ï¼Œæœ€åä¿®æ”¹æ—¶é—´æš‚ä¸æ›´æ”¹ã€‚ 
 
-		fwrite(&format, sizeof(char), 2048, fp);//¸ùÄ¿Â¼µÄ×ÓÄ¿Â¼¡¢×ÓÎÄ¼şË÷ÒıµÄ³õÊ¼»¯ 
+		fwrite(&format, sizeof(char), 2048, fp);//æ ¹ç›®å½•çš„å­ç›®å½•ã€å­æ–‡ä»¶ç´¢å¼•çš„åˆå§‹åŒ– 
 	}
 	else if (flag == "-2") {
-		cout << "ÆÕÍ¨³õÊ¼»¯£¬É¾³ıÄ¿Â¼ÎÄ¼ş£¬Í¬Ê±Çå¿ÕËùÓĞµÄ´ÅÅÌÊı¾İ" << endl;
+		cout << "æ™®é€šåˆå§‹åŒ–ï¼Œåˆ é™¤ç›®å½•æ–‡ä»¶ï¼ŒåŒæ—¶æ¸…ç©ºæ‰€æœ‰çš„ç£ç›˜æ•°æ®" << endl;
 
 		char format = '\0';
 		fseek(fp, 22, SEEK_SET);
 
-		fwrite(&ALL_DATA_BLOCK_NUM, sizeof(int), 1, fp);	//½«¿ÉÓÃ¿Õ¼äÖÃÎªÂú×´Ì¬£º262127 
-		fwrite(&format, sizeof(char), 17 * 4 * 1024 - 26, fp);//26ÎªÖ®Ç°Ö¸Õë¾­¹ıµÄ×Ö½ÚÊı £¬²¢½øĞĞfreebitmap£¬recbitmappµÄ¸ñÊ½»¯  
+		fwrite(&ALL_DATA_BLOCK_NUM, sizeof(int), 1, fp);	//å°†å¯ç”¨ç©ºé—´ç½®ä¸ºæ»¡çŠ¶æ€ï¼š262127 
+		fwrite(&format, sizeof(char), 17 * 4 * 1024 - 26, fp);//26ä¸ºä¹‹å‰æŒ‡é’ˆç»è¿‡çš„å­—èŠ‚æ•° ï¼Œå¹¶è¿›è¡Œfreebitmapï¼Œrecbitmappçš„æ ¼å¼åŒ–  
 
-		fwrite(&format, sizeof(char), 16, fp);	//¸ùÄ¿Â¼µÄ²¿·Ö¸ñÊ½»¯ 
+		fwrite(&format, sizeof(char), 16, fp);	//æ ¹ç›®å½•çš„éƒ¨åˆ†æ ¼å¼åŒ– 
 
-		fseek(fp, 49, SEEK_CUR);	//¸ùÄ¿Â¼µÄÎÄ¼ş¼ĞÃû³Æ£¬´´½¨Ê±¼ä²»×öĞŞ¸Ä£¬×îºóĞŞ¸ÄÊ±¼äÔİ²»¸ü¸Ä¡£ 
+		fseek(fp, 49, SEEK_CUR);	//æ ¹ç›®å½•çš„æ–‡ä»¶å¤¹åç§°ï¼Œåˆ›å»ºæ—¶é—´ä¸åšä¿®æ”¹ï¼Œæœ€åä¿®æ”¹æ—¶é—´æš‚ä¸æ›´æ”¹ã€‚ 
 
-		fwrite(&format, sizeof(char), 2048, fp);//¸ùÄ¿Â¼µÄ×ÓÄ¿Â¼¡¢×ÓÎÄ¼şË÷ÒıµÄ³õÊ¼»¯ 
+		fwrite(&format, sizeof(char), 2048, fp);//æ ¹ç›®å½•çš„å­ç›®å½•ã€å­æ–‡ä»¶ç´¢å¼•çš„åˆå§‹åŒ– 
 
-		fwrite(&format, sizeof(char), 262126 * 4 * 1024 - 2113, fp);//ÄÚÈİÇøµÄ³õÊ¼»¯ 
+		fwrite(&format, sizeof(char), 262126 * 4 * 1024 - 2113, fp);//å†…å®¹åŒºçš„åˆå§‹åŒ– 
 	}
 	else {
-		cout << "ÊäÈë²ÎÊı´íÎó" << endl;
+		cout << "è¾“å…¥å‚æ•°é”™è¯¯" << endl;
 	}
 }
 
 void DiskMannger::make() {
 	string FName;
 	cin >> FName;
-	cout << "´´½¨" << FName << "ÎÄ¼ş" << endl;
+	cout << "åˆ›å»º" << FName << "æ–‡ä»¶" << endl;
 }
 
 void DiskMannger::open() {
 	string FName;
 	cin >> FName;
-	cout << "´ò¿ª" << FName << "ÎÄ¼ş" << endl;
+	cout << "æ‰“å¼€" << FName << "æ–‡ä»¶" << endl;
 }
 
 void DiskMannger::exit() {
-	cout << "ÍË³öÎÄ¼ş" << endl;
+	cout << "é€€å‡ºæ–‡ä»¶" << endl;
 }
 
 void DiskMannger::write() {
 	string text;
 	cin >> text;
-	cout << "Ğ´Èë\n" << text << endl;
+	cout << "å†™å…¥\n" << text << endl;
 }
 
 
 
 void DiskMannger::read() {
-	cout << "¶Á³öÎÄ¼ş" << endl;
+	cout << "è¯»å‡ºæ–‡ä»¶" << endl;
 }
 
 void DiskMannger::cp() {
@@ -478,29 +478,29 @@ void DiskMannger::dr() {
 	judge = getchar();
 	//cout << judge << endl;
 	if (judge == '\n') {
-		cout << "ÁĞ³öÎÄ¼şÄ¿Â¼" << endl;
+		cout << "åˆ—å‡ºæ–‡ä»¶ç›®å½•" << endl;
 	}
 	else if (judge == ' ') {
 		string flag;
 		cin >> flag;
 		if (flag == "-l") {
-			cout << "ÁĞ³öÎÄ¼şÏêÏ¸Ä¿Â¼" << endl;
+			cout << "åˆ—å‡ºæ–‡ä»¶è¯¦ç»†ç›®å½•" << endl;
 		}
 		else {
-			cout << "ÊäÈëÖ¸Áî´íÎó£¬ÇëÖØĞÂÊäÈë£¡£¡" << endl;
+			cout << "è¾“å…¥æŒ‡ä»¤é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼ï¼" << endl;
 		}
 	}
 }
 
 void DiskMannger::tp(int curBlockNum) {
-	cout << "ÏÔÊ¾¿Õ¼äÖĞµÄÎÄ±¾ÎÄ¼ş£¬Ö»ÏÔÊ¾ÎÄ¼ş" << endl;
+	cout << "æ˜¾ç¤ºç©ºé—´ä¸­çš„æ–‡æœ¬æ–‡ä»¶ï¼Œåªæ˜¾ç¤ºæ–‡ä»¶" << endl;
 
-	fseek(root_fp, curBlockNum * BLOCK_SIZE, SEEK_SET);	//¶¨Î»µ½Õâ¸öFileÀàĞÍµÄ¿é
+	fseek(root_fp, curBlockNum * BLOCK_SIZE, SEEK_SET);	//å®šä½åˆ°è¿™ä¸ªFileç±»å‹çš„å—
 	fseek(root_fp, 8, SEEK_CUR);
 	int nextNum;
-	fread(&nextNum, sizeof(int), 1, root_fp);			//È¡µ½File¿éÄÚµÚÒ»¸öÊı¾İ¿éµÄ±àºÅ
+	fread(&nextNum, sizeof(int), 1, root_fp);			//å–åˆ°Fileå—å†…ç¬¬ä¸€ä¸ªæ•°æ®å—çš„ç¼–å·
 	while (nextNum != 0) {
-		fseek(root_fp, nextNum - curBlockNum + 8, SEEK_CUR);//¶¨Î»µ½µ±Ç°Êı¾İ¿é£¬Ë³±ãÈ¡µ½ÏÂÒ»¸öÊı¾İ¿éµÄ±àºÅ
+		fseek(root_fp, nextNum - curBlockNum + 8, SEEK_CUR);//å®šä½åˆ°å½“å‰æ•°æ®å—ï¼Œé¡ºä¾¿å–åˆ°ä¸‹ä¸€ä¸ªæ•°æ®å—çš„ç¼–å·
 		curBlockNum = nextNum;
 		fread(&nextNum, sizeof(int), 1, root_fp);
 		char outStr;
@@ -518,42 +518,42 @@ void DiskMannger::tp(int curBlockNum) {
 void DiskMannger::dl() {
 	string FName;
 	cin >> FName;
-	cout << "É¾³ıÃûÎª" << FName << "µÄÎÄ¼ş»òÕßÎÄ¼ş¼Ğ" << endl;
+	cout << "åˆ é™¤åä¸º" << FName << "çš„æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹" << endl;
 }
 
 void DiskMannger::cd() {
 	string address;
 	cin >> address;
-	cout << "½øÈë" << address << "µÄÎÄ¼ş¼Ğ" << endl;
+	cout << "è¿›å…¥" << address << "çš„æ–‡ä»¶å¤¹" << endl;
 }
 
 void DiskMannger::att() {
 	string FName;
 	cin >> FName;
-	cout << "ÏÔÊ¾ÃûÎª" << FName << "µÄÎÄ¼ş»òÕßÎÄ¼ş¼Ğ" << endl;
+	cout << "æ˜¾ç¤ºåä¸º" << FName << "çš„æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹" << endl;
 }
 void DiskMannger::more() {
 	string FName;
 	cin >> FName;
-	cout << "·ÖÒ³ÏÔÊ¾ÃûÎª" << FName << "µÄÎÄ¼ş»òÕßÎÄ¼ş¼Ğ" << endl;
+	cout << "åˆ†é¡µæ˜¾ç¤ºåä¸º" << FName << "çš„æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹" << endl;
 }
 
 void DiskMannger::back() {
-	cout << "»Øµ½ÉÏ¼¶Ä¿Â¼ÏÂ" << endl;
+	cout << "å›åˆ°ä¸Šçº§ç›®å½•ä¸‹" << endl;
 }
 
 void DiskMannger::recover() {
 	string FName;
 	cin >> FName;
-	cout << "»Ö¸´ÃûÎª" << FName << "µÄÎÄ¼ş»òÕßÎÄ¼ş¼Ğ" << endl;
+	cout << "æ¢å¤åä¸º" << FName << "çš„æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹" << endl;
 }
 
 void DiskMannger::clear() {
-	cout << "Çå¿Õ»ØÊÕÕ¾" << endl;
+	cout << "æ¸…ç©ºå›æ”¶ç«™" << endl;
 }
 
 void DiskMannger::rm() {
 	string FName;
 	cin >> FName;
-	cout << "³¹µ×É¾³ıÃûÎª" << FName << "µÄÎÄ¼ş»òÕßÎÄ¼ş¼Ğ" << endl;
+	cout << "å½»åº•åˆ é™¤åä¸º" << FName << "çš„æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹" << endl;
 }
