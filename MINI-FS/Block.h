@@ -1,16 +1,15 @@
 #pragma once
 #include "FCB.h"
-//123
 
 
-class Block :public FCB//Êı¾İ¿é
+class Block :public FCB//æ•°æ®å—
 {
-	int nextblock;//Ö¸ÏòÏÂÒ»¸öÊı¾İ¿é
-	char data[4092];//¼ÇÂ¼Êı¾İ
+	int nextblock;//æŒ‡å‘ä¸‹ä¸€ä¸ªæ•°æ®å—
+	char data[4092];//è®°å½•æ•°æ®
 
 	Block();
 	~Block();
 
-	void clear();//Çå³ı¿éÄÚÊı¾İ
-	void write();//ÒÉÎÊ????????Êı¾İ¿éĞ´ÈëÊı¾İµ½µ×ÒªÔõÃ´Ğ´Èë£¿
+	void clear();//æ¸…é™¤å—å†…æ•°æ®
+	void write();//ç–‘é—®????????æ•°æ®å—å†™å…¥æ•°æ®åˆ°åº•è¦æ€ä¹ˆå†™å…¥ï¼Ÿ
 };
