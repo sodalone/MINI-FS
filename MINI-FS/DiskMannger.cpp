@@ -258,7 +258,7 @@ void DiskMannger::search(int cur_num, FCB * node_now)
 			folder_now.child.push_back(tmp);
 			this->search(tmp, &folder_now);//继续查找儿子的索引文件
 		}
-		folder_now.fa_node = node_now;
+		//folder_now.fa_node = node_now;
 		if (cur_num == 18)//如果是第一块
 		{
 			root_folder = &folder_now;//全局指向当前
