@@ -1,6 +1,5 @@
 #pragma once
 #include "FCB.h"
-
 class Block :public FCB//数据块
 {
 	int nextblock;//指向下一个数据块
