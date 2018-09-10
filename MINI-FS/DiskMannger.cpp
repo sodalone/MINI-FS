@@ -57,7 +57,30 @@ DiskMannger::DiskMannger() {
 			this->mount();
 			string cmd;
 			while (cin >> cmd) {
-				if (cmd == "fmt") {
+				if (cmd == "help") {
+					cout << "帮助文档" << endl;
+					cout << "\n●fmt:\n" <<
+						"●close:\n" <<
+						"●make:\n" <<
+						"●open : \n" <<
+						"●exit : \n" <<
+						"●write : \n" <<
+						"●read : \n" <<
+						"●cp : \n" <<
+						"●dr : \n" <<
+						"●dl : \n" <<
+						"●tp : \n" <<
+						"●more : \n" <<
+						"●att : \n" <<
+						"●back :\n" <<
+						"●rename:\n" <<
+						"●recover:\n" <<
+						"●clear:\n" <<
+						"●rm:\n" <<
+						"●* :\n" <<
+						"●? :\n" << endl;
+				}
+				else if (cmd == "fmt") {
 					this->fmt(root_fp);/////////////这里该传个啥？？启动块指针即root_fp呀？？
 				}
 				else if (cmd == "close") {
@@ -122,6 +145,10 @@ DiskMannger::DiskMannger() {
 					cout << "输入指令错误，请重新输入！！" << endl;
 				}
 			}
+		}
+		else if(cmd1 == "exit"){
+			cout << "退出系统" << endl;
+			break;
 		}
 		else {
 			cout << "输入指令错误，请重新输入！！" << endl;
