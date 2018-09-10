@@ -19,4 +19,5 @@ public:
 
 	bool write(const char * content, int data, FAT fat_temp, FILE *fp);//п╢нд╪Ч 
 	void delete_file();//йм╥е╢еел©И
+	FCB * fa_node;
 };
