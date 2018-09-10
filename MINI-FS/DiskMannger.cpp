@@ -30,6 +30,7 @@ DiskMannger::DiskMannger() {
 		if (cmd1 == "help") {
 			cout << "帮助文档" << endl;
 			cout << "\n●fmt:\n" <<
+				"●break:\n" <<
 				"●close:\n" <<
 				"●make:\n" <<
 				"●open : \n" <<
@@ -146,7 +147,7 @@ DiskMannger::DiskMannger() {
 				}
 			}
 		}
-		else if(cmd1 == "exit"){
+		else if(cmd1 == "break"){
 			cout << "退出系统" << endl;
 			break;
 		}
