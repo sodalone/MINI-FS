@@ -12,6 +12,7 @@ public:
 	int size;//文件大小：以字节或块为单位的文件长度。
 	int access;//文件的保护方式:1只读 2可写 3可执行
 	int father;//父文件节点
+	int flag;//标记文件夹是否已经被删除
 	//73
 	int data;//指向第一个数
 	File();

@@ -13,6 +13,7 @@ public:
 	int access;//文件的保护方式:1只读 2可写 3可执行
 	int father;//指向父文件索引块
 	int childsize;
+	int flag;//标记文件夹是否已经被删除
 	vector <int >child;//子文件索引表?????????多少个
 
 	Folder();
