@@ -12,7 +12,7 @@ public:
 	void fmt(FILE *fp);//初始化当前空间
 
 	void make(); //创建文件
-	void open(); //打开文件
+	bool make(char*); //创建文件
 	void write(); //文件的写入；
 	void read(); //文件的读入；
 	void cp(); //文件或目录的复制
