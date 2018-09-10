@@ -13,7 +13,6 @@ public:
 
 	void make(); //创建文件
 	void open(); //打开文件
-	void exit(); //退出当前打开文件
 	void write(); //文件的写入；
 	void read(); //文件的读入；
 	void cp(); //文件或目录的复制
@@ -29,4 +28,5 @@ public:
 	void clear(); //清空回收站
 	void rm(); //删除文件
 	void search(int, FCB*,FCB *);
+	void close();
 };
