@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdio>
 #include"FCB.h"
+#include "File.h"
 using namespace std;
 class DiskMannger {
 public:
@@ -12,7 +13,7 @@ public:
 	void fmt();//初始化当前空间
 
 	void make(); //创建文件
-	bool make(char*); //创建文件
+	File* make(char *); //创建文件
 	void cp(); //文件或目录的复制
 	void rename(); //文件重命名
 	void dr(); //列出文件目录或者其详细信息
