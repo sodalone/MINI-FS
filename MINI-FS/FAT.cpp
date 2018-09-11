@@ -5,7 +5,7 @@ using namespace std;
 void FAT::init()//简单初始化
 {
 	//删除文件目录索引
-	priority_queue<int> empty;
+	priority_queue<int, vector<int>, greater<int> > empty;
 	swap(empty, this->freeblock);
 	for (int i = 19; i <= BLOCK_NUM; i++) {
 		this->freeblock.push(i);
@@ -24,7 +24,6 @@ int FAT::getBlock()//获取空磁盘
 	if (freeblock.size() > 0) {
 		int blockId = this->freeblock.top();
 		freeblock.pop();
-		this->freeblock.push(blockId);
 		return blockId;
 	}
 	return -1;
