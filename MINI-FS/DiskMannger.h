@@ -9,12 +9,10 @@ public:
 
 	void create();//创建1G的Windows空间
 	bool mount();//进入已创建空间
-	void fmt(FILE *fp);//初始化当前空间
+	void fmt();//初始化当前空间
 
 	void make(); //创建文件
 	bool make(char*); //创建文件
-	void write(); //文件的写入；
-	void read(); //文件的读入；
 	void cp(); //文件或目录的复制
 	void rename(); //文件重命名
 	void dr(); //列出文件目录或者其详细信息
