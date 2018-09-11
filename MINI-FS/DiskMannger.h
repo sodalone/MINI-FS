@@ -23,7 +23,6 @@ public:
 	void dl(); //删除文件或者文件夹
 	void cd(); //进入文件夹
 	void att(); //显示文件属性
-	void more(); //分页显示
 	void back(); //进入上级目录
 	void recover(); //恢复一个删除文件
 	void clear(); //清空回收站
