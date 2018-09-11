@@ -3,6 +3,7 @@
 #include"FCB.h"
 #include "File.h"
 using namespace std;
+
 class DiskMannger {
 public:
 	DiskMannger(); //构造函数
