@@ -8,7 +8,6 @@ Folder::Folder()
 	this->access = 3;
 	this->father = 0;
 	this->childsize = 0;
-	this->flag = 0;
 	this->fa_node = NULL;
 	this->child = vector<int>(0);
 	this->child_node = vector<FCB *>(0);

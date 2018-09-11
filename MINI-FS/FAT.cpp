@@ -10,7 +10,7 @@ void FAT::init()//简单初始化
 	for (int i = 19; i <= BLOCK_NUM; i++) {
 		this->freeblock.push(i);
 	}
-	for (int i = 0; i < 262144; i++)
+	for (int i = 0; i < 32769; i++)
 		recmap[i] = 0;
 }
 void FAT::inittot()//磁盘初始化

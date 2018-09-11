@@ -9,7 +9,7 @@ public:
 
 	void create();//创建1G的Windows空间
 	bool mount();//进入已创建空间
-	void fmt(FILE *fp);//初始化当前空间
+	void fmt();//初始化当前空间
 
 	void make(); //创建文件
 	bool make(char*); //创建文件
