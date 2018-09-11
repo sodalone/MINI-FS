@@ -2,6 +2,7 @@
 
 Folder::Folder()
 {
+	vector<FCB*>child_node(0);
 }
 
 Folder::~Folder()
