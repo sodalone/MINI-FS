@@ -16,6 +16,7 @@ public:
 	void cp(); //文件或目录的复制
 	void rename(); //文件重命名
 	void dr(); //列出文件目录或者其详细信息
+	void tree(); //显示空间树状结构
 	void tp(int curBlockNum); //显示空间中的文本文件，只显示文件
 	void map();	//显示文件的所有数据块的编号
 	void dl(); //删除文件或者文件夹
