@@ -2,6 +2,8 @@
 #include <cstdio>
 #include"FCB.h"
 #include "File.h"
+#include "Folder.h"
+
 using namespace std;
 
 class DiskMannger {
@@ -28,7 +30,7 @@ public:
 	void map();	//显示文件的所有数据块的编号
 	void dl(); //删除文件或者文件夹
 	void cd(); //进入文件夹
-	void cd(string);
+	Folder* cd(string, Folder*);
 
 	void att(); //显示文件属性
 	void recover(); //恢复一个删除文件
