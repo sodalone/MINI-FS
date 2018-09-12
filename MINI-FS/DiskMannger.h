@@ -18,7 +18,7 @@ public:
 
 	void make(); //创建文件
 	void mkdir(); //创建文件夹
-	File* make(char *); //创建文件
+	File* make(char *, Folder*); //创建文件
 	void cp(); //文件或目录的复制
 	void cp_in();
 	void cp_out();
