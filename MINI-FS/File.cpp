@@ -44,16 +44,22 @@ bool File::write(const char * content, int data, FAT fat_temp, FILE *fp)
 	return true;/////////////////返回值？？？？？？？
 }
 
-void File::delete_file(File *now, FILE *root, FAT fat)//now_pos  root_fp
+void File::delete_file(File *now, FILE *root, FAT * fat)//now_pos  root_fp
 {
 	now->flag = 1;
 	int nowId = now->data;
-	while (nowId != -1)
+	int byte, bit;
+	//回收文件索引块
+	byte = now->nodeId / 8;
+	bit = now->nodeId % 8;
+	fat->recmap[byte] |= 1 << (7 - bit);
+	if (now->data == 0) return;
+	while (nowId != -1)//回收文件数据块
 	{
 		//更新recbitmap
-		int byte = (nowId - 1) / 8;
-		int bit = (nowId - 1) % 8;
-		fat.recmap[byte] |= 1 << (7 - bit);
+		byte = (nowId - 1) / 8;
+		bit = (nowId - 1) % 8;
+		fat->recmap[byte] |= 1 << (7 - bit);
 
 		//移动到下一个数据块blockId前
 		fseek(root, 4096 * (now->data - 1) + 2 * sizeof(int), SEEK_SET);
