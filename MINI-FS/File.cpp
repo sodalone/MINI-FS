@@ -1,5 +1,7 @@
 #include "File.h"
 #include"FAT.h"
+#include "DiskMannger.h"
+
 File::File()
 {
 }
@@ -42,6 +44,20 @@ bool File::write(const char * content, int data, FAT fat_temp, FILE *fp)
 	return true;/////////////////返回值？？？？？？？
 }
 
-void File::delete_file()
+void File::delete_file(File *now, FILE *root, FAT fat)//now_pos  root_fp
 {
+	now->flag = 1;
+	int nowId = now->data;
+	while (nowId != -1)
+	{
+		//更新recbitmap
+		int byte = (nowId - 1) / 8;
+		int bit = (nowId - 1) % 8;
+		fat.recmap[byte] |= 1 << (7 - bit);
+
+		//移动到下一个数据块blockId前
+		fseek(root, 4096 * (now->data - 1) + 2 * sizeof(int), SEEK_SET);
+		fread(&nowId, sizeof(int), 1, root);
+	}
 }
+
