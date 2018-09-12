@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 /MINI-FS/demo
+/MINI-FS/456.txt
+/MINI-FS/123.txt
