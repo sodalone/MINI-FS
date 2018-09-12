@@ -12,6 +12,7 @@ public:
 	void create();//创建1G的Windows空间
 	bool mount();//进入已创建空间
 	void fmt();//初始化当前空间
+	void close();
 
 	void make(); //创建文件
 	void mkdir(); //创建文件夹
@@ -25,12 +26,10 @@ public:
 	void dl(); //删除文件或者文件夹
 	void cd(); //进入文件夹
 	void att(); //显示文件属性
-	void back(); //进入上级目录
 	void recover(); //恢复一个删除文件
 	void clear(); //清空回收站
 	void rm(); //删除文件
 	void search(int, FCB*,FCB *);
-	void close();
 
 	//string split(string str, char * c);
 };
