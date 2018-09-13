@@ -62,7 +62,7 @@ void File::delete_file(File *now, FILE *root, FAT * fat)//now_pos  root_fp
 		fat->recmap[byte] |= 1 << (7 - bit);
 
 		//移动到下一个数据块blockId前
-		fseek(root, 4096 * (now->data - 1) + 2 * sizeof(int), SEEK_SET);
+		fseek(root, 4096 * (nowId - 1) + 2 * sizeof(int), SEEK_SET);
 		fread(&nowId, sizeof(int), 1, root);
 	}
 }
