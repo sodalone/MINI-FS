@@ -33,7 +33,6 @@ public:
 	Folder* cd(string, Folder*);
 
 	void att(); //显示文件属性
-	void recover(); //恢复一个删除文件
 	void clear(); //清空回收站
 	void rm(); //删除文件
 	void search(int, FCB*,FCB *);
